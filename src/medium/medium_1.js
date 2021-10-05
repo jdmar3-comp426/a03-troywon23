@@ -11,7 +11,7 @@ export function getSum(array) {
     return array.reduce((previousValue, currentValue) => previousValue + currentValue);
 }
 
-console.log(getSum([1,2,3,5,4]))
+// console.log(getSum([1,2,3,5,4]))
 
 /**
  * Calculates the median of an array of numbers.
