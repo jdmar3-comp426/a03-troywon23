@@ -13,7 +13,6 @@ export function getSum(array) {
 
 console.log(getSum([1,2,3,5,4]))
 
-
 /**
  * Calculates the median of an array of numbers.
  * @param {number[]} array
