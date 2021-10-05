@@ -8,9 +8,13 @@ import {variance} from "./data/stats_helpers.js";
  * prototype functions. Very useful
  */
 export function getSum(array) {
-
+    var sum = 0;
+    for (var i = 0; i < array.length; i++) {
+        sum = sum + array[i];
+        
+    }
+    return sum;
 }
-
 
 /**
  * Calculates the median of an array of numbers.
