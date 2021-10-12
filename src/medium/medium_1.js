@@ -25,11 +25,12 @@ export function getSum(array) {
  */
 export function getMedian(array) {
     let middle = array.length/2
+    let median = 0;
     if ((array.length % 2) == 0) {
-        let median = (array[middle - 1] + array[middle]) / 2
+        median = (array[middle - 1] + array[middle]) / 2
         return median;
     } else {
-        let median = (array[middle - 0.5]);
+        median = (array[middle - 0.5]);
         return median;
     }
 }
