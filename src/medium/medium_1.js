@@ -9,9 +9,10 @@ import {variance} from "./data/stats_helpers.js";
  */
 export function getSum(array) {
     return array.reduce((previousValue, currentValue) => previousValue + currentValue);
+    
 }
+// console.log(getSum([1,2,3,4,5]));
 
-// console.log(getSum([1,2,3,5,4]))
 
 /**
  * Calculates the median of an array of numbers.
@@ -23,8 +24,17 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-
+    let middle = array.length/2
+    if ((array.length % 2) == 0) {
+        let median = (array[middle - 1] + array[middle]) / 2
+        return median;
+    } else {
+        let median = (array[middle - 0.5]);
+        return median;
+    }
 }
+//let array = [3,2,5,6,2,7,4,2,7,5,4];
+//console.log(getMedian(array));
 
 /**
  * Calculates statistics (see below) on an array of numbers.
@@ -46,6 +56,34 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
+    let length = array.length;
+    let sum = 0;
+    let min = 9999999999999;
+    let max = -9999999999999;
+    let variance = 0;
+    let standard_deviation = 0;
+  
+    let median = getMedian(array);
+    for (let i = 0; i < array.length; i++) {
+        sum = sum + array[i];
 
+        if (array[i] < min) {
+            min = array[i];
+        }
+        if (array[i] > max) {
+            max = array[i];
+        }
+        
+        
+    }
+    let mean = sum/length;
+    for (let i = 0; i < array.length; i++) {
+        variance = variance + ((array[i] - (sum/array.length)) ** 2);
+        
+        
+    }
+    variance = (variance / (array.length));
+    standard_deviation = (variance ** (1/2));
+    // const dict = [{length: length}, {sum: sum}];
+    return {length: length, sum: sum, mean: mean, median: median, min: min, max: max, variance: variance, standard_deviation: standard_deviation};
 }
-
