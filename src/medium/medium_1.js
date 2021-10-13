@@ -96,9 +96,8 @@ export function getStatistics(array) {
         "min": min,
         "max": max,
         "variance": variance,
-        "standard deviation": standard_deviation
+        "standard_deviation": standard_deviation
     };
   
     return myDictionary;
 }
-console.log(getStatistics([3,2,4,5,5,5,2,6,7]));
