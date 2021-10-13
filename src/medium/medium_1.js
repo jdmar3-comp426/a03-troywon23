@@ -88,7 +88,7 @@ export function getStatistics(array) {
     variance = (variance / (array.length));
     standard_deviation = (variance ** (1/2));
     // const dict = [{length: length}, {sum: sum}];
-    let myDictionary = {
+    let myDictionary = ({
         length: length,
         sum: sum,
         mean: mean,
@@ -97,7 +97,7 @@ export function getStatistics(array) {
         max: max,
         variance: variance,
         standard_deviation: standard_deviation
-    };
+    });
   
     return myDictionary;
 }
