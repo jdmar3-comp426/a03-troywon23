@@ -59,14 +59,14 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-    let length = array.length;
-    let sum = 0;
-    let min = 9999999999999;
-    let max = -9999999999999;
+    let ArrLength = array.length;
+    let ArrSum = 0;
+    let ArrMin = 9999999999999;
+    let ArrMax = -9999999999999;
     let ArrVariance = 0;
-    let standard_deviation = 0;
+    let ArrStandard_deviation = 0;
   
-    let median = getMedian(array);
+    let ArrMedian = getMedian(array);
     for (let i = 0; i < array.length; i++) {
         sum = sum + array[i];
 
@@ -79,19 +79,19 @@ export function getStatistics(array) {
         
         
     }
-    let mean = sum/length;
+    let ArrMean = sum/length;
     ArrVariance = variance(array, mean);
     standard_deviation = Math.sqrt(ArrVariance);
     // const dict = [{length: length}, {sum: sum}];
     let myDictionary = ({
-        min: min,
-        median: median,
-        max: max,
+        length: ArrLength,
+        sum: ArrSum,
+        mean: ArrMean,
+        median: ArrMedian,
+        min: ArrMin,
+        max: ArrMax,
         variance: ArrVariance,
-        mean: mean,
-        length: length,
-        sum: sum,
-        standard_deviation: standard_deviation
+        standard_deviation: ArrStandard_deviation
     });
   
     return myDictionary;
