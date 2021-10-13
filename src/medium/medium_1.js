@@ -11,7 +11,7 @@ export function getSum(array) {
     return array.reduce((previousValue, currentValue) => previousValue + currentValue);
     
 }
-// console.log(getSum([1,2,3,4,5]));
+
 
 
 /**
@@ -24,8 +24,10 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-    array = array.sort((a, b) => a - b);
-    let middle = array.length/2
+    let arraySort = array.sort(function(a, b) { 
+        return a - b;
+    });
+    let middle = arraySort.length/2
     let median = 0;
     if ((array.length % 2) == 0) {
         median = (array[middle - 1] + array[middle]) / 2
@@ -36,8 +38,6 @@ export function getMedian(array) {
     }
 }
 
-// let array = [3,2,5,6,2,7,4,2,7,5];
-// console.log(getMedian(array));
 
 /**
  * Calculates statistics (see below) on an array of numbers.
@@ -63,7 +63,7 @@ export function getStatistics(array) {
     let sum = 0;
     let min = 9999999999999;
     let max = -9999999999999;
-    let variance = 0;
+    let ArrVariance = 0;
     let standard_deviation = 0;
   
     let median = getMedian(array);
@@ -80,19 +80,14 @@ export function getStatistics(array) {
         
     }
     let mean = sum/length;
-    for (let i = 0; i < array.length; i++) {
-        variance = variance + ((array[i] - (sum/array.length)) ** 2);
-        
-        
-    }
-    variance = (variance / (array.length));
-    standard_deviation = (variance ** (1/2));
+    ArrVariance = variance(array, mean);
+    standard_deviation = Math.sqrt(ArrVariance);
     // const dict = [{length: length}, {sum: sum}];
     let myDictionary = ({
         min: min,
         median: median,
         max: max,
-        variance: variance,
+        variance: ArrVariance,
         mean: mean,
         length: length,
         sum: sum,
