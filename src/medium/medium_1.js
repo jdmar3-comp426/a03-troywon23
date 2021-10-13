@@ -89,14 +89,14 @@ export function getStatistics(array) {
     standard_deviation = (variance ** (1/2));
     // const dict = [{length: length}, {sum: sum}];
     let myDictionary = {
-        "length": length,
-        "sum": sum,
-        "mean": mean,
-        "median": median,
-        "min": min,
-        "max": max,
-        "variance": variance,
-        "standard_deviation": standard_deviation
+        length: length,
+        sum: sum,
+        mean: mean,
+        median: median,
+        min: min,
+        max: max,
+        variance: variance,
+        standard_deviation: standard_deviation
     };
   
     return myDictionary;
