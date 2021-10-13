@@ -14,7 +14,7 @@ export function sumToString(a, b) {
     return sum +"";
     
 }
-console.log(sumToString(3, 4));
+
 
 
 /**
