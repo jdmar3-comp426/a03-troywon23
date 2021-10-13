@@ -88,6 +88,6 @@ export function getStatistics(array) {
     variance = (variance / (array.length));
     standard_deviation = (variance ** (1/2));
     // const dict = [{length: length}, {sum: sum}];
-    return {length: length, sum: sum, mean: mean, median: median, min: min, max: max, variance: variance, standard_deviation: standard_deviation};
+    return {min: min, median: median, max: max, variance: variance, mean: mean, length: length, sum: sum, standard_deviation: standard_deviation};
 }
 // console.log(getStatistics([3,2,4,5,5,5,2,6,7]));
