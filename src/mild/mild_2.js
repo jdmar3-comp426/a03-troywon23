@@ -28,7 +28,11 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-
+   const lol = [array.length];
+   for (let i = 0; i < array.length; i++) {
+      lol[i] = identifyVariable(array[i]);
+   }
+   return lol;
 }
 
 /**
