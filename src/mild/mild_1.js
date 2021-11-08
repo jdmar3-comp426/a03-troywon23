@@ -10,7 +10,7 @@
  */
 export function sumToString(a, b) {
     let sum = a + b;
-    return ('' + (sum));
+    return (a + " + " +  b + " = " (sum));
     
 }
 
@@ -45,17 +45,8 @@ export function getIncreasingArray(startNumber, endNumber) {
 export function maxAndMin(numbers) {
     let max = 0;
     let min = 10000;
-    const min_max = []
-    for (let i = 0; i < numbers.length; i++) {
-        if (min > numbers[i]) {
-            min = numbers[i];
-        }
-        if (max < numbers[i]) {
-            max = numbers[i];
-        }
-    }
-    let myDictionary= ({max: max,
-        min: min
+    let myDictionary= ({max: Math.max(numbers),
+        min: Math.max(numbers)
     });
     return myDictionary;
 }
@@ -71,5 +62,6 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
+    
 
 }
