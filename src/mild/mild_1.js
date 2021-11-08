@@ -10,7 +10,7 @@
  */
 export function sumToString(a, b) {
     let sum = a + b;
-    return (a + " + " +  b + " = " (sum));
+    return (a + " + " +  b + " = " + (sum));
     
 }
 
@@ -43,10 +43,15 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
-    let max = 0;
-    let min = 10000;
-    let myDictionary= ({max: Math.max(numbers),
-        min: Math.max(numbers)
+var max = numbers.reduce(function(a, b) {
+    return Math.max(a, b);
+}, 0);
+var min = numbers.reduce(function(a, b) {
+    return Math.min(a, b);
+}, 0);
+
+    let myDictionary= ({max: max,
+        min: min
     });
     return myDictionary;
 }
