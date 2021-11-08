@@ -62,13 +62,20 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
+    let counted = array.reduce(function (all, lol) {
+        if (lol in all) {
+            all[lol]++
+        } 
+        else {
+            all[lol] = 1;
+        }
+        return all;
+    }, {})
     
-
 }
-
 function getMaxOfArray(numArray) {
-    return Math.max.apply(null, numArray);
+    return Math.max(null, numArray);
 }
 function getMinOfArray(numArray) {
-    return Math.min.apply(null, numArray);
+    return Math.min(null, numArray);
 }
