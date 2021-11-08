@@ -111,5 +111,8 @@ export function removeKeys(object, keyList) {
          delete copy[keyList[i]];
       }
    }
+   for (let i = 0; i < copy.length; i++) {
+      copy[keyList[i]].toString.replace("\n", "");
+   }
    return copy;
 }
