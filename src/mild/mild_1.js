@@ -43,15 +43,10 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
-    var max = numbers.reduce(function(a, b) {
-        return Math.max(a, b);
-    }, 0);
-    var min = numbers.reduce(function(a, b) {
-        return Math.min(a, b);
-    }, 0);
-
-    let myDictionary= ({max: max,
-        min: min
+    var max_of_array = Math.max.apply(Math, numbers);
+    var min_of_array = Math.min.apply(Math, numbers);
+    let myDictionary= ({max: max_of_array,
+        min: min_of_array
     });
     return myDictionary;
 }
