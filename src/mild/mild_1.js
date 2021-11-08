@@ -44,8 +44,8 @@ export function getIncreasingArray(startNumber, endNumber) {
  */
 export function maxAndMin(numbers) {
     var nums = numbers;
-    let max_of_array = Math.max.apply(Math, nums);
-    let min_of_array = Math.min.apply(Math, nums);
+    var max_of_array = Math.max.apply(Math, nums);
+    var min_of_array = Math.min.apply(Math, nums);
     let myDictionary= ({max: max_of_array,
         min: min_of_array
     });
