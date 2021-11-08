@@ -10,7 +10,7 @@
  */
 export function sumToString(a, b) {
     let sum = a + b;
-    return (str(sum));
+    return ('' + (sum));
     
 }
 
@@ -54,8 +54,8 @@ export function maxAndMin(numbers) {
             max = numbers[i];
         }
     }
-    let myDictionary= ({min: min,
-        max: max
+    let myDictionary= ({max: max,
+        min: min
     });
     return myDictionary;
 }
