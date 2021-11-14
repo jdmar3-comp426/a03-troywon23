@@ -22,11 +22,40 @@ see under the methods section
 export const allCarStats = {
     
 
-    avgMpg: getStatistics(mpg_data.find(city_mpg)).mean,
-    allYearStats: undefined,
-    ratioHybrids: undefined
+    avgMpg: getAvgMpg(mpg_data),
+    allYearStats: getAllYearStats(mpg_data),
+    ratioHybrids: getRatioHybrids(mpg_data)
+
 };
 
+export function getAvgMpg(data) {
+    let city = 0;
+    let hwy = 0;
+
+    for (let i = 0; i < data.length; i++) {
+        city += data[i].city_mpg;
+        hwy += data[i].highway_mpg;
+    }
+    return {city: city/data.length, highway = hwy/data.length};
+}
+
+export function getAllYearStats(data) {
+    let year = [];
+    for (let i = 0; i < data.length; i++) {
+        year[i] = data[i].year;
+    }
+    return getStatistics(year);
+}
+
+export function getRatioHybrids(data) {
+    let hybrids = 0;
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].hybrid) {
+            hybrids++;
+        }
+    }
+    return hybrids/data.length;
+}
 
 /**
  * HINT: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
