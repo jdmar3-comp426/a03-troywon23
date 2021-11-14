@@ -105,7 +105,7 @@ export function removeKeyNonDestructive(object, key) {
  */
 export function removeKeys(object, keyList) {
    let copy = {};
-   for (const field in copy) {
+   for (const field in object) {
       copy[field] = object[field];
    }
    
