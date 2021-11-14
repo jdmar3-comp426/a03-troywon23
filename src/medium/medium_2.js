@@ -36,7 +36,7 @@ export function getAvgMpg(data) {
         city += data[i].city_mpg;
         hwy += data[i].highway_mpg;
     }
-    return {city: city/data.length, highway = hwy/data.length};
+    return {city: city/data.length, highway: hwy/data.length};
 }
 
 export function getAllYearStats(data) {
