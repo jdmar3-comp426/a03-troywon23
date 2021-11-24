@@ -118,3 +118,64 @@ export const moreStats = {
     makerHybrids: undefined,
     avgMpgByYearAndHybrid: undefined
 };
+
+export function getMakerHybrids(data) {
+    let map = new Map();
+    for (let i = 0; i < data.length; i++) {
+        let what = data[i];
+        if (what.hybrid == false) {
+            continue;
+        }
+        let id = what.id;
+        let make = what.make;
+        if (map.get(make) != undefined) {
+            map.get(make).push(id);
+        }
+        else {
+            map.set(make, [id]);
+        }
+    }
+    let array = [];
+    for (let [key, value] of map) {
+        map.push({make: key, hybrid: value});
+    }
+    map.sort(function(a,b) {
+        if (a.hybrid.length < b.hybrid.length) {
+            return 1;
+        }
+        if (a.hybrid.length > b.hybrid.length) {
+            return -1;
+        }
+        if (a.hybrid.length == b.hybrid.length) {
+            return 0;
+        }
+    })
+    return array;
+}
+export function getAMBYAH(data) {
+    let stuff = {};
+    for (let i = 0; i < data.length; i++) {
+        if (!(data[i].year in stuff)) {
+                stuff[data[i].year] = {hybridCitySum: 0, hybridHighwaySum: 0, notHybridCitySum: 0, notHybridHighwaySum: 0, numberOfHybrids: 0, numberOfNotHybrids: 0, hybrids: {}, non_hybrids: {}};
+            }
+        if (data[i].hybrid == true) {
+            stuff[data[i].year].numberOfHybrids++;
+            stuff[data[i].year].hybridHighwaySum += data[i].highway_mpg;
+            stuff[data[i].year].hybridCitySum += data[i].city_mpg;
+
+        }
+        if (data[i].hybrid == false) {
+            stuff[data[i].year].numberOfNotHybrids++;
+            stuff[data[i].year].notHybridCitySum += data[i].city_mpg;
+            stuff[data[i].year].notHybridHighwaySum += data[i].highway_mpg;
+        }
+            }
+        let final = {};
+        for (let property in stuff) {
+            final[property] = {hybrids: {city: stuff[property].hybridCitySum/stuff[property].numberOfHybrids, highway: stuff[property].hybridHighwaySum/stuff[property].numberOfHybrids}, 
+                non_hybrids: {city: stuff[property].notHybridCitySum/stuff[property].numberOfNotHybrids, highway: stuff[property].notHybridHighwaySum/stuff[property].numberOfNotHybrids}};
+        }
+        return final;
+    
+        }
+    
