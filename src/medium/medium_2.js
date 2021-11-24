@@ -54,7 +54,8 @@ export function getRatioHybrids(data) {
             hybrids++;
         }
     }
-    return hybrids/data.length;
+    let ans = hybrids/data.length;
+    return ans;
 }
 
 /**
@@ -136,10 +137,10 @@ export function getMakerHybrids(data) {
         }
     }
     let array = [];
-    for (let [key, value] of map) {
-        map.push({make: key, hybrid: value});
+    for (let [key, value] of array) {
+        array.push({make: key, hybrid: value});
     }
-    map.sort(function(a,b) {
+    array.sort(function(a,b) {
         if (a.hybrid.length < b.hybrid.length) {
             return 1;
         }
@@ -178,4 +179,5 @@ export function getAMBYAH(data) {
         return final;
     
         }
+    
     
