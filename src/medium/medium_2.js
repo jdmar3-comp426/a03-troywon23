@@ -173,8 +173,8 @@ export function getAMBYAH(data) {
             }
         let final = {};
         for (let property in stuff) {
-            final[property] = {hybrids: {city: stuff[property].hybridCitySum/stuff[property].numberOfHybrids, highway: stuff[property].hybridHighwaySum/stuff[property].numberOfHybrids}, 
-                non_hybrids: {city: stuff[property].notHybridCitySum/stuff[property].numberOfNotHybrids, highway: stuff[property].notHybridHighwaySum/stuff[property].numberOfNotHybrids}};
+            final[property] = {hybrid: {city: stuff[property].hybridCitySum/stuff[property].numberOfHybrids, highway: stuff[property].hybridHighwaySum/stuff[property].numberOfHybrids}, 
+                notHybrid: {city: stuff[property].notHybridCitySum/stuff[property].numberOfNotHybrids, highway: stuff[property].notHybridHighwaySum/stuff[property].numberOfNotHybrids}};
         }
         return final;
     
