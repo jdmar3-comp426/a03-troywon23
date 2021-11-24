@@ -115,8 +115,8 @@ export function getRatioHybrids(data) {
  * }
  */
 export const moreStats = {
-    makerHybrids: undefined,
-    avgMpgByYearAndHybrid: undefined
+    makerHybrids: getMakerHybrids(mpg_data),
+    avgMpgByYearAndHybrid: getAMBYAH(mpg_data)
 };
 
 export function getMakerHybrids(data) {
