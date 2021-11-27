@@ -158,7 +158,7 @@ export const filter = (arr, test) => {
         if (test(arr[i])) {
             stuff.pass.push(arr[i]);
         } else {
-            stuff.push.fail(arr[i]);
+            stuff.fail.push(arr[i]);
         }
     }
     return stuff;
