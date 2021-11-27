@@ -29,12 +29,12 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
         if (a.horsepower > b.horsepower) {
             return -1;
         }
-        else if (a.horsepower < b.horsepower) {
+        if (a.horsepower < b.horsepower) {
             return 1;
-        } else {
-            return 0;
         }
-    })
+            return 0;
+        })
+    
     return stuff;
 }
 
@@ -88,12 +88,10 @@ export function searchName(car_data, searchTerm) {
         if (a.id.indexOf(searchTerm) > b.id.indexOf(searchTerm)) {
             return 1;
         }
-        else if (a.id.indexOf(searchTerm) < b.id.indexOf(searchTerm)) {
+        if (a.id.indexOf(searchTerm) < b.id.indexOf(searchTerm)) {
             return -1;
-        } else {
-            return 0;
         }
-
+            return 0;
         })
         return stuff;
         }
