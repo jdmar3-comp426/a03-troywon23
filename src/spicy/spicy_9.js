@@ -150,7 +150,7 @@ export const someEven = (arr, test) => {
  *       -->  { pass: [1, 5, 31], fail: [90] }
  */
 export const filter = (arr, test) => {
-    let stuff = {fail: [], pass: []};
+    let stuff = {pass: [], fail: []};
     if (arr.length == 0) {
         return stuff;
     }
