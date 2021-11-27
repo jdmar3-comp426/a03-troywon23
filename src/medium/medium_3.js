@@ -18,7 +18,24 @@ queries.
  *
  */
 export function searchHighPower(car_data, minHorsepower, minTorque) {
+    let stuff = [];
+    for (let i = 0; i < car_data.length; i++) {
+        if (car_data[i].horsepower >= minHorsepower && car_data.torque >= minTorque) {
+            stuff.push(car_data[i]);
+        }
+    }
 
+    stuff.sort(function(a,b) {
+        if (a.horsepower > b.horsepower) {
+            return -1;
+        }
+        else if (a.horsepower < b.horsepower) {
+            return 1;
+        } else {
+            return 0;
+        }
+    })
+    return stuff;
 }
 
 
@@ -33,7 +50,22 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
  *
  */
 export function searchMpg(car_data, minCity, minHighway) {
-
+    let stuff = [];
+    for (let i = 0; i < car_data.length; i++) {
+        if (cara_data[i].highway_mpg >= minHighway && car_data[i].city_mpg >= minCity) {
+            stuff.push(car_data[i]);
+        }
+    }
+    stuff.sort(function(a,b) {
+        if (a.highway_mpg > b.highway_mpg) {
+            return -1;
+        }
+        if (a.highway_mpg < b.highway_mpg) {
+            return 1;
+        }
+        return 0;
+    })
+    return stuff;
 }
 
 
@@ -46,8 +78,27 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
+    let stuff = [];
+    for (let i = 0; i < car_data.length; i++) {
+        if (car_data[i].id.toLowerCase().includes(searchTerm.toLowerCase)) {
+            stuff.push(car_data[i]);
+        }
+    }
+    car_data.sort(function(a, b) {
+        if (a.id.indexOf(searchTerm) > b.id.indexOf(searchTerm)) {
+            return 1;
+        }
+        else if (a.id.indexOf(searchTerm) < b.id.indexOf(searchTerm)) {
+            return -1;
+        } else {
+            return 0;
+        }
 
-}
+        })
+        return stuff;
+        }
+    
+
 
 
 /**
@@ -59,5 +110,23 @@ export function searchName(car_data, searchTerm) {
  * @returns {[]} an array of car objects
  */
 export function searchByYear(car_data, years) {
+    let stuff = [];
+    for (let i = 0; i < car_data.length; i++) {
+        if (years.includes(car_data[i].year)) {
+            stuff.push(car_data[i]);
+        }
+    }
+    stuff.sort(function(a,b) {
+        if (a.year > b.year) {
+            return -1;
+        }
+        else if (a.year < b.year) {
+            return 1;
+        } else {
+            return 0;
+        }
+        
+    })
+    return stuff;
 
 }
